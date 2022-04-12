@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
 }
 
 android {
@@ -8,16 +8,13 @@ android {
 
     defaultConfig {
 
-        applicationId rootProject.android.applicationId
         minSdkVersion rootProject.android.minSdkVersion
         targetSdkVersion rootProject.android.targetSdkVersion
         versionCode rootProject.android.versionCode
         versionName rootProject.android.versionName
 
-
-
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -30,20 +27,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-
-
-
-    buildFeatures {
-        viewBinding true
-
-    }
-    dataBinding {
-        enabled = true
-    }
 }
 
 dependencies {
-
     implementation rootProject.depsLibs.baseLib
     testImplementation rootProject.depsLibs.junit
     androidTestImplementation rootProject.depsLibs.test_ext_junit

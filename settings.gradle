@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "JetPack"
 include ':app'
+include ':lib_common'
+include ':lib_model'
+include ':lib_opensource'

@@ -1,4 +1,13 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    apply from:'baoge.gradle'
+//    dependencies {
+//        classpath "com.alibaba:arouter-register:1.0.2"
+//    }
+
+
+}
+
 plugins {
     id 'com.android.application' version '7.1.2' apply false
     id 'com.android.library' version '7.1.2' apply false
