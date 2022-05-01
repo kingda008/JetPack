@@ -27,12 +27,42 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
 
     implementation rootProject.depsLibs.baseLib
+
     testImplementation rootProject.depsLibs.junit
     androidTestImplementation rootProject.depsLibs.test_ext_junit
     androidTestImplementation rootProject.depsLibs.test_espresso
+
+//    //运行时和编译时依赖
+//    implementation rootProject.depsLibs.room
+
+    implementation(rootProject.depsLibs.room) {
+        exclude group: 'com.android.support'
+    }
+
+    annotationProcessor (rootProject.depsLibs.room_compiler){
+        exclude group: 'com.android.support'
+    }
+
+    implementation(rootProject.depsLibs.room_rxjava2) {
+        exclude group: 'com.android.support'
+    }
+    implementation(rootProject.depsLibs.room_guava) {
+        exclude group: 'com.android.support'
+    }
+    implementation(rootProject.depsLibs.room_testing) {
+        exclude group: 'com.android.support'
+    }
+
+    implementation project(path: ':lib_common')
+
 }

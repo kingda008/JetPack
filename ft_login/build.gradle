@@ -1,0 +1,67 @@
+if (rootProject.android.isApplication) {
+    apply plugin: 'com.android.application'
+} else {
+
+    apply plugin: 'com.android.library'
+}
+
+
+android {
+    compileSdkVersion rootProject.android.compileSdkVersion
+    buildToolsVersion rootProject.android.buildToolsVersion
+
+    defaultConfig {
+        if (rootProject.android.isApplication) {
+            applicationId "com.baoge.ft_login"
+        }
+        minSdkVersion rootProject.android.minSdkVersion
+        targetSdkVersion rootProject.android.targetSdkVersion
+        versionCode rootProject.android.versionCode
+        versionName rootProject.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    sourceSets {
+        main {
+            if (rootProject.android.isApplication) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java.srcDirs 'src/main/appDir'
+            } else {
+                manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
+            }
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    implementation rootProject.depsLibs.baseLib
+    implementation project(path: ':lib_opensource')
+    implementation project(path: ':lib_model')
+    implementation project(path: ':lib_common')
+    testImplementation rootProject.depsLibs.junit
+    androidTestImplementation rootProject.depsLibs.test_ext_junit
+    androidTestImplementation rootProject.depsLibs.test_espresso
+
+
+}

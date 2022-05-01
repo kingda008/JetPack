@@ -34,4 +34,10 @@ dependencies {
     testImplementation rootProject.depsLibs.junit
     androidTestImplementation rootProject.depsLibs.test_ext_junit
     androidTestImplementation rootProject.depsLibs.test_espresso
+
+
+//    //运行时和编译时依赖
+//    implementation rootProject.depsLibs.room
+//    annotationProcessor rootProject.depsLibs.room_compiler
+
 }

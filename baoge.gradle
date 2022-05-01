@@ -7,7 +7,7 @@ ext {
                versionCode      : 1,
                versionName      : '1.0',
                multiDexEnabled  : true,
-               isApplication  : false,
+               isApplication  : true,
     ]
     depsVersion = [appcompact     : '1.2.0',
                    design         : '1.3.0',
@@ -27,6 +27,7 @@ ext {
                    junit          : '4.+',
                    test_ext_junit : '1.1.2',
                    test_espresso  : '3.3.0',
+                   room           : '1.1.1',
 
     ]
 
@@ -58,8 +59,12 @@ ext {
                 junit          : "junit:junit:${depsVersion.junit}",
                 test_ext_junit : "androidx.test.ext:junit:${depsVersion.test_ext_junit}",
                 test_espresso  : "androidx.test.espresso:espresso-cor:${depsVersion.test_espresso}",
+                room           : "android.arch.persistence.room:runtime:${depsVersion.room}",
+                room_compiler  : "android.arch.persistence.room:compiler:${depsVersion.room}",
+                room_compiler  : "android.arch.persistence.room:compiler:${depsVersion.room}",
+                room_rxjava2   : "android.arch.persistence.room:rxjava2:${depsVersion.room}",
+                room_guava     : "android.arch.persistence.room:guava:${depsVersion.room}",
+                room_testing   : "android.arch.persistence.room:testing:${depsVersion.room}",
     ]
-
-
 
 }

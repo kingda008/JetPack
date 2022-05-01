@@ -1,12 +1,13 @@
 package com.baoge.jetpack;
 
-import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.os.Bundle;
 
 import com.baoge.jetpack.databinding.ActivityMainBinding;
+import com.baoge.lib_common.base.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private ActivityMainBinding binding;
     @Override

@@ -45,6 +45,9 @@ android {
 dependencies {
 
     implementation rootProject.depsLibs.baseLib
+    implementation project(path: ':lib_opensource')
+    implementation project(path: ':lib_common')
+    implementation project(path: ':lib_model')
     testImplementation rootProject.depsLibs.junit
     androidTestImplementation rootProject.depsLibs.test_ext_junit
     androidTestImplementation rootProject.depsLibs.test_espresso
